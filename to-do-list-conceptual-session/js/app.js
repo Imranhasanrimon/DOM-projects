@@ -1,22 +1,42 @@
 let index = 0;
-document.getElementById('add-btn').addEventListener('click', function () {
-    index += 1;
+
+function addTask(e) {
     const description = inputValue('inputValue');
     const tr = document.createElement('tr');
     const i = document.createElement('i');
     i.setAttribute('class', "fa-solid fa-xmark cursor-pointer text-red-500");
 
+    if (document.getElementById('inputValue').value === '') {
+        return;
+    }
+
+    index += 1;
+
     tr.innerHTML = `
     <th>${index}</th>
     <td>${description}</td>
     <td>${i.outerHTML}</td>
-    `
+    `;
+
     document.getElementById('tbody').append(tr)
     document.getElementById('inputValue').value = '';
 
+}
+
+//by clicking
+document.getElementById('add-btn').addEventListener('click', addTask)
+
+//by pressing enter
+document.getElementById('inputValue').addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+        addTask()
+    }
 })
 
-// clear-all-btn functionality 
+// clear-all-btn 
 document.getElementById('clear-all-btn').addEventListener('click', function () {
-    document.getElementById('tbody').remove();
+    document.getElementById('tbody').innerHTML = '';
+    index = 0;
 })
+
+// clear one by one 

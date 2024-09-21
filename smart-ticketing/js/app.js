@@ -1,9 +1,8 @@
 const selectedSeat = document.getElementById('selected-seat');
 let currentSeat = 0;
 let allSeat = 40;
-let currentAmount = parseFloat(document.getElementById('total-amount').innerText)
-
-// console.log(selectedSeat.innerHTML);
+let currentAmount = parseFloat(document.getElementById('total-amount').innerText);
+let grandAmout = parseFloat(document.getElementById('grand-amount').innerText);
 
 
 
@@ -98,9 +97,14 @@ document.getElementById('coupon-btn').addEventListener('click', function () {
 })
 
 //enabling modal
-document.getElementById('email-input').addEventListener('keyup', function (event) {
+document.getElementById('phone-number-input').addEventListener('keyup', function (event) {
     const emailValue = event.target.value;
     if (emailValue.length >= 11) {
         document.getElementById('modal-btn').removeAttribute('disabled', true)
     }
+})
+
+//reload page
+document.getElementById('continue-btn').addEventListener('click', function () {
+    location.reload()
 })

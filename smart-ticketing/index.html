@@ -137,7 +137,7 @@
                     <button id="coupon-btn" disabled class="btn join-item bg-gray-600 ">Apply</button>
                 </div>
                 <div class="flex justify-between text-xl font-semi-bold ">
-                    <h4>Total Price</h4>
+                    <h4>Grand Price</h4>
                     <h4>BDT 1100</h4>
                 </div>
             </main>
@@ -154,13 +154,14 @@
                 </div>
                 <div class="input-field">
                     <label for="" class="text-xl font-bold block mb-2">Email ID</label>
-                    <input type="text" placeholder="Enter your email id"
+                    <input id="email-input" type="text" placeholder="Enter your email id"
                         class="input join-item  input-md w-full max-w-xs bg-gray-600" />
                 </div>
                 <div>
                     <!-- modal  -->
                     <!-- Open the modal using ID.showModal() method -->
-                    <button class="btn  text-white w-full bg-green-500" onclick="my_modal_1.showModal()">Next</button>
+                    <button disabled id="modal-btn" class="btn text-white w-full bg-green-500"
+                        onclick="my_modal_1.showModal()">Next</button>
                     <dialog id="my_modal_1" class="modal">
                         <div class="modal-box text-center">
                             <h3 class="text-lg font-bold">Hello!</h3>

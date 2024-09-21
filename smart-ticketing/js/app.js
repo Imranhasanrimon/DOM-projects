@@ -1,6 +1,8 @@
 const selectedSeat = document.getElementById('selected-seat');
 let currentSeat = 0;
 let allSeat = 40;
+let currentAmount = parseFloat(document.getElementById('total-amount').innerText)
+
 // console.log(selectedSeat.innerHTML);
 
 
@@ -35,8 +37,8 @@ function btnOnclick(event) {
     document.getElementById('total-seats').innerText = currentSeat;
 
     //total amount
-    const correntAmount = parseFloat(document.getElementById('total-amount').innerText)
-    document.getElementById('total-amount').innerText = correntAmount + 550
+    currentAmount += 550
+    document.getElementById('total-amount').innerText = currentAmount
 
 
     // apply coupon 
@@ -63,8 +65,8 @@ function removeSeat(event) {
     document.getElementById('total-seats').innerText = currentSeat;
 
     //total amount
-    const correntAmount = parseFloat(document.getElementById('total-amount').innerText)
-    document.getElementById('total-amount').innerText = correntAmount - 550
+    currentAmount -= 550
+    document.getElementById('total-amount').innerText = currentAmount - 550
 
     //no seat text
     if (currentSeat === 0) {
@@ -87,10 +89,18 @@ function removeSeat(event) {
 // get coupon discount 
 document.getElementById('coupon-btn').addEventListener('click', function () {
     const couponContainer = document.getElementById('coupon-container');
-    couponContainer.innerHTML = `
-    <div>
+    couponContainer.outerHTML = `
+    <div class="flex justify-between">
          <h3>Discount</h3>
-         <h3>-BDT: 330</h3>
+         <h3>-BDT: 330.00</h3>
     </div>
     `
+})
+
+//enabling modal
+document.getElementById('email-input').addEventListener('keyup', function (event) {
+    const emailValue = event.target.value;
+    if (emailValue.length >= 11) {
+        document.getElementById('modal-btn').removeAttribute('disabled', true)
+    }
 })

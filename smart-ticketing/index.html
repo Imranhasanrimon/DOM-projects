@@ -162,7 +162,22 @@
                         class="input join-item  input-md w-full max-w-xs bg-gray-600" />
                 </div>
                 <div>
-                    <button class="btn join-item text-white w-full bg-green-500">Next</button>
+                    <!-- modal  -->
+                    <!-- Open the modal using ID.showModal() method -->
+                    <button class="btn  text-white w-full bg-green-500" onclick="my_modal_1.showModal()">Next</button>
+                    <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Hello!</h3>
+                            <p class="py-4">Press ESC key or click the button below to close</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn join-item">Close</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
                 </div>
                 <div class="flex justify-between">
                     <p class="underline font-bold">Terms and Conditions</p>
@@ -171,6 +186,8 @@
             </div>
 
         </div>
+
+
     </section>
 
 

@@ -21,7 +21,9 @@
         <!-- seat plan  -->
         <div class="col-span-2  space-y-1 p-1">
             <div class="flex justify-end">
-                <h1 class=" bg-green-500 bg-opacity-20 text-green-500 font-bold text-2xl p-2 rounded-md">40 Seats</h1>
+                <h1 class=" bg-green-500 bg-opacity-20 text-green-500 font-bold text-2xl p-2 rounded-md">
+                    <span id="all-seats">40</span> Seats
+                </h1>
             </div>
             <h3 class="text-3xl font-bold p-3">Select Your Seat</h3>
             <div class="flex justify-between text-xl p-3 font-bold border-y-2 border-dashed border-gray-500 ">
@@ -127,12 +129,12 @@
                 </div>
                 <div class="flex justify-between text-xl font-semi-bold">
                     <h4>Total Price</h4>
-                    <h4>BDT <span id="total-amount">00</span></h4>
+                    <h4>BDT: <span id="total-amount">00</span></h4>
                 </div>
-                <div class="join  w-full">
-                    <input type="text" placeholder="Type here"
+                <div id="coupon-container" class="join  w-full">
+                    <input id="coupon-input" type="text" disabled placeholder="Type here"
                         class="input join-item  input-md w-full max-w-xs bg-gray-600" />
-                    <button class="btn join-item bg-gray-600 ">Button</button>
+                    <button id="coupon-btn" disabled class="btn join-item bg-gray-600 ">Apply</button>
                 </div>
                 <div class="flex justify-between text-xl font-semi-bold ">
                     <h4>Total Price</h4>

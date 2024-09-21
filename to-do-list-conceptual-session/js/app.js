@@ -4,7 +4,7 @@ function addTask(e) {
     const description = inputValue('inputValue');
     const tr = document.createElement('tr');
     const i = document.createElement('i');
-    i.setAttribute('class', "fa-solid fa-xmark cursor-pointer text-red-500");
+    i.setAttribute('class', "delete-icon fa-solid fa-xmark cursor-pointer text-red-500");
 
     if (document.getElementById('inputValue').value === '') {
         return;
@@ -15,7 +15,7 @@ function addTask(e) {
     tr.innerHTML = `
     <th>${index}</th>
     <td>${description}</td>
-    <td>${i.outerHTML}</td>
+    <td onclick="deleteItem(this)">${i.outerHTML}</td>
     `;
 
     document.getElementById('tbody').append(tr)
@@ -40,3 +40,7 @@ document.getElementById('clear-all-btn').addEventListener('click', function () {
 })
 
 // clear one by one 
+function deleteItem(element) {
+    console.log(element.parentNode.remove());
+    console.log(element);
+}

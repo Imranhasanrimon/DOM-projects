@@ -14,7 +14,3 @@ for (let tr of tbody) {
         console.log(event.target);
     })
 }
-document.getElementById('tr').addEventListener('click', function (e) {
-    e.target.parentNode.removeChild(e.target)
-})
-document.getElementById('tr').outerHTML = ""

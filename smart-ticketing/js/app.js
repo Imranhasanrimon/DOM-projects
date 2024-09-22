@@ -108,3 +108,8 @@ document.getElementById('phone-number-input').addEventListener('keyup', function
 document.getElementById('continue-btn').addEventListener('click', function () {
     location.reload()
 })
+/*
+    Assignment 5 is being prepared
+    laptop has been obsolete
+
+    */

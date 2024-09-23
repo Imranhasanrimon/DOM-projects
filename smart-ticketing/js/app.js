@@ -101,7 +101,10 @@ document.getElementById('phone-number-input').addEventListener('keyup', function
     const emailValue = event.target.value;
     if (emailValue.length >= 11) {
         document.getElementById('modal-btn').removeAttribute('disabled', true)
+    } else {
+        document.getElementById('modal-btn').setAttribute('disabled', true)
     }
+
 })
 
 //reload page

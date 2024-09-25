@@ -48,7 +48,9 @@ function btnOnclick(event) {
         document.getElementById('coupon-btn').setAttribute('disabled', true)
         document.getElementById('coupon-input').setAttribute('disabled', true)
     }
-
+    console.log(event);
+    event.classList.remove('bg-gray-700')
+    event.classList.add('bg-green-500')
 }
 
 //_________________________________________________________________________________
